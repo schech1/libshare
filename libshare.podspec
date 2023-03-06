@@ -20,7 +20,7 @@ Pod::Spec.new do |spec|
                 
 spec.prepare_command = <<-SCRIPT
       set -ev
-      ./gradlew --no-daemon -Pframework=#{spec.name}.framework linkPodReleaseFrameworkIos --stacktrace --info
+      ./gradlew --no-daemon -Pframework=#{spec.name}.framework linkPodReleaseFrameworkIosX64 --stacktrace --info
     SCRIPT
 
 
