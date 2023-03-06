@@ -1,5 +1,5 @@
 Pod::Spec.new do |spec|
-    spec.name                     = 'shared'
+    spec.name                     = 'libshare'
     spec.version                  = '1.0'
     spec.homepage                 = 'https://github.com/schech1/libshare'
     spec.source                   = { :git => "https://github.com/schech1/libshare.git", :branch => "main",:tag => "{spec.version}"  }
