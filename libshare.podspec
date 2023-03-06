@@ -13,6 +13,6 @@ Pod::Spec.new do |spec|
                 spec.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   spec.prepare_command = <<-SCRIPT
       set -ev
-      ./gradlew --no-daemon -Pframework=#{spec.name}.framework linkPodReleaseFrameworkIosX64 --stacktrace --info
+      ./gradlew --no-daemon -Pframework=#{spec.name}.framework linkPodReleaseFrameworkIosSimulatorArm64 --stacktrace --info
     SCRIPT
 end
