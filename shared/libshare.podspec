@@ -3,7 +3,8 @@ Pod::Spec.new do |spec|
     spec.version                  = '1.1'
     spec.homepage                 = 'https://github.com/schech1/libshare'
 
-    spec.source                   = { :git => "https://github.com/schech1/libshare.git", :branch => "main", :tag => "1.1" }
+    
+    spec.source = { :http => "https://github.com/schech1/libshare/releases/tag/1.1" }
 
     spec.authors                  = ''
     spec.license                  = ''
