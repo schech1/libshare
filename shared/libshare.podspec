@@ -3,13 +3,14 @@ Pod::Spec.new do |spec|
     spec.version                  = '1.1'
     spec.homepage                 = 'https://github.com/schech1/libshare'
 
-    
+
+
     spec.source = { :http => "https://github.com/schech1/libshare/releases/tag/1.1" }
 
     spec.authors                  = ''
     spec.license                  = ''
     spec.summary                  = 'Some description for the Shared Module'
-    spec.vendored_frameworks      = 'libshare-1.1/build/cocoapods/framework/shared.framework'
+    spec.vendored_frameworks      = 'shared.framework'
     spec.libraries                = 'c++'
     spec.ios.deployment_target    = '16.2'
                 
