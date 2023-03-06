@@ -10,19 +10,8 @@ Pod::Spec.new do |spec|
     spec.libraries                = 'c++'
     spec.ios.deployment_target    = '16.2'
                 
-                
-    spec.pod_target_xcconfig = {
-        'KOTLIN_PROJECT_PATH' => ':shared',
-        'PRODUCT_MODULE_NAME' => 'shared',
-        'KOTLIN_TARGET[sdk=iphonesimulator*]' => 'ios_x64',
-        'KOTLIN_TARGET[sdk=iphoneos*]' => 'ios_arm'
-    }
-                
-spec.prepare_command = <<-SCRIPT
+  spec.prepare_command = <<-SCRIPT
       set -ev
-      ./gradlew --no-daemon -Pframework=#{spec.name}.framework linkPodReleaseFrameworkIosX64 --stacktrace --info
+      ./gradlew --no-daemon -Pframework=#{spec.name}.framework linkReleaseFrameworkIos --stacktrace --info
     SCRIPT
-
-
-                
 end
