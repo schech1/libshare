@@ -15,8 +15,6 @@ Pod::Spec.new do |spec|
         'KOTLIN_PROJECT_PATH' => ':shared',
         'PRODUCT_MODULE_NAME' => 'shared',
 
-     'KOTLIN_TARGET[sdk=iphonesimulator*]' => 'ios_x64',
-        'KOTLIN_TARGET[sdk=iphoneos*]' => 'ios_arm'
     }
                 
 spec.prepare_command = <<-SCRIPT
