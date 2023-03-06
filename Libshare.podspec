@@ -2,7 +2,7 @@ Pod::Spec.new do |spec|
     spec.name                     = 'Libshare'
     spec.version                  = '1.0'
     spec.homepage                 = 'https://github.com/schech1/libshare'
-    spec.source                   = { :git => "https://github.com/schech1/libshare.git", :branch => "main",:tag => "{spec.version}"  }
+    spec.source                   = { :git => "https://github.com/schech1/libshare.git", :branch => "main", :tag => "{spec.version}"  }
     spec.authors                  = ''
     spec.license                  = ''
     spec.summary                  = 'Some description for the Shared Module'
@@ -18,27 +18,9 @@ Pod::Spec.new do |spec|
                 
 spec.prepare_command = <<-SCRIPT
       set -ev
-      ./gradlew --no-daemon -Pframework=#{spec.name}.framework linkPodReleaseFrameworkIosArm64 --stacktrace --info
+      ./gradlew --no-daemon -Pframework=#{spec.name}.framework linkPodReleaseFrameworkIos --stacktrace --info
     SCRIPT
 
-     spec.script_phases = [
-            {
-                :name => 'Build shared',
-                :execution_position => :before_compile,
-                :shell_path => '/bin/sh',
-                :script => <<-SCRIPT
-                    if [ "YES" = "$COCOAPODS_SKIP_KOTLIN_BUILD" ]; then
-                      echo "Skipping Gradle build task invocation due to COCOAPODS_SKIP_KOTLIN_BUILD environment variable set to \"YES\""
-                      exit 0
-                    fi
-                    set -ev
-                    REPO_ROOT="$PODS_TARGET_SRCROOT"
-                    "$REPO_ROOT/gradlew" -p "$REPO_ROOT" $KOTLIN_PROJECT_PATH:syncFramework \
-                        -Pkotlin.native.cocoapods.platform=$PLATFORM_NAME \
-                        -Pkotlin.native.cocoapods.archs="$ARCHS" \
-                        -Pkotlin.native.cocoapods.configuration=$CONFIGURATION
-                SCRIPT
-            }
-        ]
+
                 
 end
