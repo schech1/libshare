@@ -1,8 +1,10 @@
 Pod::Spec.new do |spec|
     spec.name                     = 'libshare'
-    spec.version                  = '1.0'
+    spec.version                  = '1.1'
     spec.homepage                 = 'https://github.com/schech1/libshare'
-    spec.source                   = { :git => "https://github.com/schech1/libshare.git", :branch => "main", :tag => "1.0" }
+
+    spec.source                   = { :git => "https://github.com/schech1/libshare.git", :branch => "main", :tag => "1.1" }
+
     spec.authors                  = ''
     spec.license                  = ''
     spec.summary                  = 'Some description for the Shared Module'
