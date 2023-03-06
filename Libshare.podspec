@@ -8,12 +8,12 @@ Pod::Spec.new do |spec|
     spec.summary                  = 'Some description for the Shared Module'
     spec.vendored_frameworks      = 'build/cocoapods/framework/shared.framework'
     spec.libraries                = 'c++'
-    spec.ios.deployment_target = '16.2'
+    spec.ios.deployment_target    = '16.2'
                 
                 
     spec.pod_target_xcconfig = {
         'KOTLIN_PROJECT_PATH' => ':shared',
-        'PRODUCT_MODULE_NAME' => 'Libshare',
+        'PRODUCT_MODULE_NAME' => 'shared',
     }
                 
 spec.prepare_command = <<-SCRIPT
