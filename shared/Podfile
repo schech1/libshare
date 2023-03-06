@@ -1,0 +1,4 @@
+target 'libtest' do
+  pod 'shared', '~> 1.0'
+
+end
